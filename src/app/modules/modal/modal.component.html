@@ -1,0 +1,15 @@
+<div mat-dialog-content class="modal" fxFlex="fit-content" fxLayout="column" fxLayoutAlign="space-between stretch">
+    <div class="modal__content">
+        <div (click)="close()" class="close__button" fxFlex="100" fxLayout="row" fxLayoutAlign="end start">
+            <mat-icon aria-hidden="false" aria-label="icon close" fontIcon="close"></mat-icon>
+        </div>
+        <h1 class="modal__title">{{ data.gameDetail.name }}</h1>
+        <div class="image-and-description__container">
+            <img class="image__contain" src="{{data.gameDetail.background_image}}" />
+            <p class="description__contain">{{ data.gameDetail.description_raw }}</p>
+        </div>
+
+        <p>Fecha de lanzamiento: {{ data.gameDetail.released}}</p>
+        <p>Clasificación: {{ data.gameDetail.rating }}</p>
+    </div>
+</div>

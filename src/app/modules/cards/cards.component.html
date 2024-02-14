@@ -1,0 +1,18 @@
+<div>
+    <h1 class="title">Tienda de juegos</h1>
+    @for (store of gameStores; track store) {
+    <div class="offers">
+        <div class="card-div" fxLayout="row" fxFlex.lt-md="0 1 96%" (click)="clickCard(store.id)">
+            <h1><strong>{{ store.name }}</strong></h1>
+            <img class="card-image" [style.width.px]="200 " [style.height.px]="200 " src="{{store.image_background}}" />
+            <div>
+                <a href="{{ store.domain }}" target="_blank" class="card-domain">{{ store.domain }}</a>
+            </div>
+
+            <p class="card-games-count ">
+                <span>Número total de juegos:</span> {{ store.games_count }}
+            </p>
+        </div>
+    </div>
+    } @empty { No hay juegos para mostrar }
+</div>

@@ -1,0 +1,23 @@
+<div class="total__container">
+    <button class="return__button" (click)="goBack()">Volver</button> @if(storeDetail) {
+    <div class="game__contain">
+        <h1><strong>{{storeDetail?.name}}</strong></h1>
+        <div class="detail__container">
+            <img class="game-image" src="{{storeDetail?.image_background}}" />
+            <p class="description">{{storeDetail?.description }}</p>
+        </div>
+        <p>La tienda contiene <strong>{{ storeDetail?.games_count }}</strong> juegos en total</p>
+    </div>
+    }
+
+    <div class="list__contain">
+        <h1><strong>Listado de juegos</strong></h1>
+        <ul class="game__list">
+            @for (game of gamesArray; track game.id) {
+            <li class="game-item__list" (click)="getGameDetail(game.id)">{{ game?.name }}</li>
+            } @empty {
+            <li class="empty-message__list">No hay juegos disponibles en esta tienda</li>
+            }
+        </ul>
+    </div>
+</div>
